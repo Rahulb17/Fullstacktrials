@@ -1,0 +1,74 @@
+/* Apply border-box globally for predictable sizing (Task 2. & 4.) */
+* {
+    box-sizing: border-box; /* Ensures width: 350px includes padding and border */
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox for full vertical and horizontal centering (Task 1. & 4.) */
+body {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    background-color: #f4f4f9; /* Light background for the page */
+    font-family: Arial, sans-serif;
+}
+
+/* Login Card/Container Styling (Task 2.) */
+.login-card {
+    width: 350px; /* Fixed width */
+    padding: 20px; /* Internal padding */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Heading Styling (Task 3.) */
+.login-card h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Spacing below the heading (margin) */
+    color: #333;
+}
+
+/* Consistent Spacing for Form Elements (Task 3.) */
+.form-group {
+    margin-bottom: 15px; /* Space between form groups (Email/Password) */
+}
+
+/* Label and Input Alignment (Task 3.) */
+label {
+    display: block; /* Make label take up full width */
+    margin-bottom: 5px; /* Small space between label and input */
+    font-weight: bold;
+    text-align: left; /* Left-align form labels (Default but good practice) */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Make inputs full width of the card's content area (Task 3.) */
+    padding: 10px; /* Padding inside inputs (gives breathing room) */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Submit Button Styling (Task 3.) */
+.full-width-btn {
+    display: block;
+    width: 100%; /* Full width of the card (Task 3.) */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; /* Center button text */
+    margin-top: 20px; /* Spacing above the button */
+}
+
+.full-width-btn:hover {
+    background-color: #0056b3;
+}
