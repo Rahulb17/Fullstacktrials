@@ -1,0 +1,215 @@
+/* GLOBAL STYLES & FONT */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f8f9fa;
+    --dark-color: #343a40;
+    --padding-lg: 100px;
+    --padding-sm: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern Font */
+    /* Smooth Scrolling (Task 3) */
+    scroll-behavior: smooth; 
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+/* SECTION STYLING */
+.page-section {
+    min-height: 100vh; /* Ensures sections take up full viewport height for distinct scrolling */
+    padding: var(--padding-lg) 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.alt-bg {
+    background-color: var(--secondary-color);
+}
+
+.home-bg {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://picsum.photos/1920/1080?random=1');
+    background-size: cover;
+}
+
+/* 2. STICKY NAVIGATION BAR */
+.navbar {
+    /* Sticky Navigation */
+    position: sticky; /* Stays at the top of the viewport */
+    top: 0;
+    z-index: 1000;
+    
+    /* Visual Design */
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px 5vw;
+    
+    /* Flexbox Layout (Task 5) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Horizontal menu on desktop */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s; /* Hover transition */
+}
+
+/* Hover Effect (Task 6) */
+.nav-links li a:hover {
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* HAMBURGER MENU (MOBILE-FIRST) */
+.hamburger-icon {
+    display: none; /* Hidden by default on large screens */
+    cursor: pointer;
+    padding: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--dark-color);
+    transition: 0.4s; /* Subtle animation for icon transformation */
+}
+
+.menu-toggle-input {
+    display: none; /* Hide the checkbox itself */
+}
+
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+/* 4. MEDIA QUERY for Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+    
+    .nav-links {
+        /* Default state: Menu collapsed/hidden */
+        display: none;
+        flex-direction: column; /* Vertical dropdown */
+        position: absolute;
+        top: 100%; /* Position right below the navbar */
+        left: 0;
+        width: 100%; /* Full width links */
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        /* Slide-in/Fade-in transition for opening/closing */
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
+        transform: translateY(-20px);
+    }
+
+    .nav-links li {
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    /* Show Hamburger Icon (Task 4) */
+    .hamburger-icon {
+        display: block; 
+    }
+    
+    /* TOGGLE LOGIC (CSS Checkbox Hack) */
+    /* When the hidden checkbox is :checked, select the sibling nav-links and show them */
+    .menu-toggle-input:checked ~ .nav-links {
+        display: flex;
+        opacity: 1; /* Fade-in effect */
+        transform: translateY(0); /* Slide-in effect */
+    }
+    
+    /* Hamburger Icon X transformation (Task 6) */
+    .menu-toggle-input:checked ~ .hamburger-icon .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle-input:checked ~ .hamburger-icon .bar:nth-child(2) {
+        opacity: 0; /* Hide middle bar */
+    }
+
+    .menu-toggle-input:checked ~ .hamburger-icon .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* Responsive Section Padding */
+    .page-section {
+        padding: var(--padding-sm) 5vw;
+        min-height: 80vh; /* Adjust for smaller screens */
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack service items */
+    }
+}
