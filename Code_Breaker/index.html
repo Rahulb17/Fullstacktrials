@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Breaker - The Array Heist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Code Breaker - The Array Heist 🔓</h1>
+        <p class="hidden-password-info">
+            Target Password: <span id="target-pattern"></span> (3 digits)
+        </p>
+
+        <div id="array-display" class="array-display">
+            </div>
+
+        <div id="feedback" class="feedback">Awaiting command...</div>
+
+        <div class="operations-panel">
+            
+            <div class="operation-group insert-group">
+                <h3>Insert at Index</h3>
+                <input type="number" id="insert-index" placeholder="Index (0-9)" min="0" max="9">
+                <input type="number" id="insert-value" placeholder="Value (0-9)" min="0" max="9">
+                <button id="insert-btn" class="op-btn">INSERT</button>
+            </div>
+
+            <div class="operation-group delete-group">
+                <h3>Delete at Index</h3>
+                <input type="number" id="delete-index" placeholder="Index (0-9)" min="0" max="9">
+                <button id="delete-btn" class="op-btn">DELETE</button>
+            </div>
+
+            <div class="operation-group search-group">
+                <h3>Search for Pattern</h3>
+                <input type="text" id="search-pattern" placeholder="Pattern (e.g., 2,1,4)">
+                <button id="search-btn" class="op-btn">SEARCH</button>
+            </div>
+
+        </div>
+
+        <div class="utility-panel">
+            <button id="reset-btn" class="op-btn reset-btn">RESET Array</button>
+            <button id="hint-btn" class="op-btn hint-btn">HINT</button>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

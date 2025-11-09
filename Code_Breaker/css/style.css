@@ -1,0 +1,186 @@
+/* GLOBAL STYLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #1a1a2e; /* Dark theme for hacker vibe */
+    color: #00ff41; /* Neon green text */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.game-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    border: 3px solid #00ff41;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #00ff4150;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+/* HIDDEN PASSWORD */
+.hidden-password-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #0d0d1b;
+    border: 1px dashed #00ff41;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* 1. VISUAL ARRAY DISPLAY */
+.array-display {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 30px;
+    height: 60px; /* Fixed height for consistent layout */
+}
+
+.array-cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0d1b;
+    border: 2px solid #00ff41;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.5s, opacity 0.5s, background-color 0.2s; /* Base animation properties */
+    color: #fff; /* White digit color */
+}
+
+.array-cell.empty {
+    border-style: dashed;
+    color: #00ff41;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* 2. OPERATIONS PANEL */
+.operations-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.operation-group {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #00ff4180;
+    border-radius: 5px;
+    background-color: #0d0d1b;
+}
+
+.operation-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: none;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #1a1a2e;
+    border: 1px solid #00ff41;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00ff41;
+}
+
+.op-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ff41;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.op-btn:hover {
+    background-color: #33ff66;
+    transform: translateY(-1px);
+}
+
+.op-btn:active {
+    transform: translateY(1px);
+}
+
+.utility-panel {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.reset-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.hint-btn {
+    background-color: #ffc107;
+    color: #1a1a2e;
+}
+
+/* 4. FEEDBACK SYSTEM */
+.feedback {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px dashed #fff;
+    border-radius: 5px;
+    background-color: #0d0d1b;
+    min-height: 40px;
+}
+
+.feedback.success {
+    color: #33ff66;
+    border-color: #33ff66;
+    text-shadow: 0 0 3px #33ff66;
+}
+
+.feedback.error {
+    color: #dc3545;
+    border-color: #dc3545;
+    text-shadow: 0 0 3px #dc3545;
+}
+
+/* SEARCH ANIMATION HIGHLIGHT */
+.highlight-match {
+    background-color: #00ff41 !important;
+    color: #1a1a2e !important;
+    transform: scale(1.1);
+}
+
+.highlight-check {
+    background-color: #007bff;
+    color: #fff;
+}
