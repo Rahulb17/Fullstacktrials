@@ -1,0 +1,106 @@
+
+/* style.css for The Modern Frame */
+/* Using named color, HEX, RGB and HSL across site */
+:root{
+  --brand:#2c3e50; /* hex */
+  --accent: rgb(200,50,80); /* rgb */
+  --muted: hsl(210,20%,90%); /* hsl */
+  --text: #222;
+  --nav-height: 70px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background: var(--muted) url('https://picsum.photos/1600/900?random=20') no-repeat center/cover;
+}
+
+/* Fixed header */
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:var(--nav-height);
+  background: rgba(255,255,255,0.95);
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  z-index:1000;
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 16px;
+}
+.brand{margin:0; font-size:1.4rem; color:var(--brand); text-transform:uppercase; letter-spacing:2px;}
+.main-nav ul{margin:0; padding:0; list-style:none;}
+.main-nav li{display:inline-block; margin-left:18px;}
+.main-nav a{text-decoration:none; padding:8px 10px; display:inline-block; transition:transform .2s ease, color .2s ease; color:var(--brand);}
+.main-nav a:hover{transform:scale(1.05); color:var(--accent);}
+
+/* Page layout spacing to account for fixed header */
+main{max-width:1100px; margin:calc(var(--nav-height) + 20px) auto 50px; padding:0 16px; background: rgba(255,255,255,0.85); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.1);}
+
+/* Hero */
+.hero{position:relative; overflow:hidden; border-radius:8px;}
+.hero-img{width:100%; display:block; vertical-align:middle;}
+.badge{position:absolute; top:16px; left:16px; background:var(--accent); color:white; padding:8px 12px; border-radius:6px; font-weight:bold;}
+.hero-text{position:absolute; right:32px; bottom:24px; text-align:right; background:rgba(255,255,255,0.6); padding:12px; border-radius:6px;}
+.lead{font-style:italic; color:#333;}
+.open-house{margin:8px 0;}
+.blink{animation:blink 3s infinite;}
+@keyframes blink{
+  0%{opacity:1; transform:translateY(0);}
+  50%{opacity:0.3; transform:translateY(-4px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+/* Featured artwork */
+.featured{padding:20px 0;}
+.art-card{display:flex; gap:16px; align-items:center;}
+.art-card img{width:240px; height:160px; object-fit:cover; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.2); transition:transform .25s;}
+.art-card img:hover{transform:scale(1.05);}
+
+/* Gallery grid using CSS Grid (2x2) */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:18px;
+  padding:18px 0 40px 0;
+}
+.grid-item{background:white; padding:8px; border-radius:6px; box-shadow:0 3px 8px rgba(0,0,0,0.08);}
+.grid-item img{width:100%; height:auto; display:block; transition:transform .3s;}
+
+/* scale on hover */
+.grid-item img:hover{transform:scale(1.05);}
+
+/* About: float image left to wrap text */
+.about-hero{display:flex; gap:16px; padding:18px 0;}
+.about-img{width:45%; float:left; margin-right:16px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.about-text{flex:1;}
+
+/* Lists styling */
+.notable ul{list-style:none; padding-left:0;}
+.notable ul li::before{content:"\2022"; color:var(--accent); display:inline-block; width:1em; margin-left:-1em;}
+
+/* Contact table */
+.hours{width:100%; border-collapse:collapse; margin-top:12px;}
+.hours th, .hours td{border:1px solid #ddd; padding:8px; text-align:left;}
+.hours th{background:var(--brand); color:white;}
+
+/* Small visual tweaks */
+footer{text-align:center; padding:18px 0; color:#666; font-size:0.9rem;}
+
+/* utility */
+.video-wrapper{display:flex; justify-content:center; padding:12px 0;}
+
+/* Responsive-ish for the iframe width on smaller desktops (still desktop-first) */
+@media(min-width:1200px){
+  .hero-img{height:400px; object-fit:cover;}
+}
+
+/* navigation active state */
+.main-nav a.active{border-bottom:2px solid var(--accent); padding-bottom:6px;}
