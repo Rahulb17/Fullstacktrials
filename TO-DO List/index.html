@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Job Application Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-card">
+            <h2>Add New Application</h2>
+            <form id="app-form">
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Role Title</label>
+                    <input type="text" id="role" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Application Date</label>
+                    <input type="date" id="date" value="" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="status">Initial Status</label>
+                    <select id="status">
+                        <option value="Applied">Applied</option>
+                        <option value="Interviewing">Interviewing</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="full-width-btn">Track Application</button>
+            </form>
+        </div>
+
+        <section class="active-apps">
+            <h2>Active Applications</h2>
+            <ul id="active-list" class="app-list">
+                </ul>
+        </section>
+
+        <section class="completed-apps">
+            <h2>Archived Applications</h2>
+            <ul id="completed-list" class="app-list archived">
+                </ul>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

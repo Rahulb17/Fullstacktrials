@@ -1,0 +1,192 @@
+/* GLOBAL STYLES & BOX MODEL (From Project 2) */
+* {
+    box-sizing: border-box; /* Ensures padding and border are inside the specified width */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    /* Removed Flexbox centering on body to allow for vertical scrolling of multiple sections */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto; /* Horizontally centers the main content container */
+    padding: 0 20px;
+}
+
+/* APP INPUT CARD STYLING (Based on Project 2's .login-card) */
+.app-card {
+    /* Centering the card within the container */
+    width: 350px; 
+    margin: 0 auto 30px auto; /* Center horizontally, add space below */
+    
+    /* Card Design from Project 2 */
+    padding: 20px; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.app-card h2 {
+    text-align: center; 
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Form Groups and Inputs (From Project 2) */
+.form-group {
+    margin-bottom: 15px; 
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: none; /* For cleaner select dropdown */
+}
+
+/* Submit Button (From Project 2) */
+.full-width-btn {
+    display: block;
+    width: 100%; 
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; 
+    margin-top: 20px; 
+    transition: background-color 0.3s;
+}
+
+.full-width-btn:hover {
+    background-color: #218838;
+}
+
+/* LIST STYLES */
+section h2 {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    color: #555;
+}
+
+.app-list {
+    list-style: none;
+    padding: 0;
+}
+
+.app-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.app-list li:hover {
+    transform: translateY(-2px);
+}
+
+.app-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-info {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.status-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    /* Default status color */
+    background-color: #007bff; 
+    color: white;
+}
+
+/* STATUS COLOR CODING */
+.status-Applied { background-color: #007bff; }
+.status-Interviewing { background-color: #ffc107; color: #333; }
+.status-Offer { background-color: #28a745; }
+.status-Rejected { background-color: #dc3545; }
+
+
+/* Item Actions */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.archive-btn, .delete-btn {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.archive-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.archive-btn:hover {
+    background-color: #5a6268;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Archived List Styles */
+.completed-apps .app-list li {
+    border-left-color: #6c757d; 
+    background-color: #e9ecef;
+}
+
+.completed-apps .status-tag {
+    background-color: #5a6268;
+}
